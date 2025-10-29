@@ -27,9 +27,15 @@ public class Driver {
             case "chrome":
 
                 ChromeOptions options = new ChromeOptions();
+                options.addArguments("--guest");
                 options.addArguments("disable-popup-blocking");
+                options.addArguments("--disable-notifications");
+                options.addArguments("--no-first-run");
+                options.addArguments("--no-default-browser-check");
 
                 Map<String, Object> prefs = new HashMap<String, Object>();
+                prefs.put("credentials_enable_service", false);
+                prefs.put("profile.password_manager_enabled", false);
                 prefs.put("profile.default_content_setting_values.geolocation", 2); // 2 means Block
                 options.setExperimentalOption("prefs", prefs);
 
