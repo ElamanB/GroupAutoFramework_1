@@ -11,6 +11,7 @@ import org.testng.annotations.DataProvider;
                 "html:target/cucumber-reports.html",
                 "json:target/cucumber.json"},
         monochrome = true,
+        tags = "@loginDemo",
         dryRun = false
 )
 public class CucumberRunner extends AbstractTestNGCucumberTests {
@@ -18,7 +19,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
-        return (Object[][]) super.scenarios();
+        return super.scenarios();
     }
 
 
