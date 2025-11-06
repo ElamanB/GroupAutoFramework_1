@@ -7,5 +7,5 @@ Feature: Login functionality on OpenMRS
     When the user enters valid username
     And the user enters valid password
     And clicks the login button
-    Then the user should be redirected to the home page
+    Then the user should be redirected to the service queues page
         
